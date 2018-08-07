@@ -1,4 +1,5 @@
-package BookApp;// Copyright (c) 2018 Travelex Ltd
+// Copyright (c) 2018 Travelex Ltd
+package com.BookApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
