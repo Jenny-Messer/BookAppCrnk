@@ -5,7 +5,6 @@ package com.BookApp;
 import io.crnk.core.resource.annotations.JsonApiField;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
-import io.crnk.core.resource.annotations.JsonApiRelationId;
 import io.crnk.jpa.annotations.JpaResource;
 import lombok.Data;
 

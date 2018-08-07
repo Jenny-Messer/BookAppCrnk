@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-public class PartySecurityConfiguration {
+public class BookSecurityConfiguration {
 
     /**
      * Crnk security authorization config.

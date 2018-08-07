@@ -55,7 +55,7 @@ public class EmbeddedPostgresConfiguration {
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT FROM pg_catalog.pg_user WHERE usename = 'books'")) {
             if (!resultSet.next()) {
-                statement.execute("CREATE USER books WITH PASSWORD 'Travelex123'");
+                statement.execute("CREATE USER books WITH PASSWORD 'password'");
                 statement.execute("CREATE SCHEMA books AUTHORIZATION books");
             }
         } catch (SQLException e) {
@@ -63,7 +63,7 @@ public class EmbeddedPostgresConfiguration {
 
         dataSource = new PGPoolingDataSource();
         dataSource.setUser("books");
-        dataSource.setPassword("Travelex123");
+        dataSource.setPassword("password");
         dataSource.setPortNumber(postgresConfig.net().port());
         dataSource.setServerName(postgresConfig.net().host());
         dataSource.setDatabaseName(postgresConfig.storage().dbName());
