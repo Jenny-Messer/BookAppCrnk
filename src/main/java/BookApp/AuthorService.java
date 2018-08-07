@@ -5,6 +5,8 @@ package BookApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthorService {
 
@@ -21,6 +23,10 @@ public class AuthorService {
 
     public Author getAuthor(String id){
         return authorRepository.findById(id);
+    }
+
+    public List<Author> getAuthors(){
+        return authorRepository.findAll();
     }
 
 

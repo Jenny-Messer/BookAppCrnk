@@ -2,6 +2,9 @@
 
 package BookApp;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Book {
 
     private String id;
@@ -9,6 +12,15 @@ public class Book {
     private String title;
     private String authorId;
     private String contents;
+
+    @JsonCreator
+    public Book(@JsonProperty("pages") int pages,
+                @JsonProperty("title") String title,
+                @JsonProperty("contents") String contents) {
+        this.pages = pages;
+        this.title = title;
+        this.contents = contents;
+    }
 
     public String getId() {
         return id;

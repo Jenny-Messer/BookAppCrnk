@@ -6,9 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class BookRepository {
@@ -20,13 +18,8 @@ public class BookRepository {
         return book;
     }
 
-
     Book findById(String id) {
        return books.stream().filter(book -> book.getId().equals(id)).findFirst().orElseThrow(RuntimeException::new);
-    }
-
-    Set<Book> findBooksByAuthor(String authorId) {
-        return books.stream().filter(book -> book.getAuthorId().equals(authorId)).collect(Collectors.toSet());
     }
 
     List<Book> findAll() {

@@ -2,6 +2,9 @@
 
 package BookApp;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,10 +12,10 @@ import java.util.Date;
 
 public class Author {
 
-    private String name;
-    private Date dob;
-    private String penName;
     private String id;
+    private String name;
+    private String dob;
+    private String penName;
 
     public String getId() {
         return id;
@@ -22,9 +25,10 @@ public class Author {
         this.id = id;
     }
 
-
-
-    public Author(String name, Date dob, String penName) {
+    @JsonCreator
+    public Author(@JsonProperty("name") String name,
+                  @JsonProperty("dob") String dob,
+                  @JsonProperty("penName") String penName) {
         this.name = name;
         this.dob = dob;
         this.penName = penName;
@@ -38,25 +42,12 @@ public class Author {
         this.name = name;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(String dobStr) {
-
-        DateFormat format = new SimpleDateFormat("dd, mm, yyyy");
-
-        Date dob;
-
-        {
-            try {
-                dob = format.parse(dobStr);
-                this.dob = dob;
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
-
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public String getPenName() {

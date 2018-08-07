@@ -17,9 +17,9 @@ public class AuthorRepository {
 
     Author addAuthor(Author author) {
         author.setId(UUID.randomUUID().toString());
+        authors.add(author);
         return author;
     }
-
 
     Author findById(String id) {
         return authors.stream().filter(author -> author.getId().equals(id)).findFirst().orElseThrow(RuntimeException::new);
