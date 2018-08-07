@@ -19,7 +19,10 @@ public class BookRepository {
     }
 
     Book findById(String id) {
-       return books.stream().filter(book -> book.getId().equals(id)).findFirst().orElseThrow(RuntimeException::new);
+       return books.stream()
+                   .filter(book -> book.getId().equals(id))
+                   .findFirst()
+                   .orElseThrow(RuntimeException::new);
     }
 
     List<Book> findAll() {

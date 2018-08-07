@@ -47,10 +47,37 @@
             <scope>runtime</scope>
         </dependency>
 
+        <dependency>
+            <groupId>io.crnk</groupId>
+            <artifactId>crnk-setup-spring-boot2</artifactId>
+            <version>${crnk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.crnk</groupId>
+            <artifactId>crnk-client</artifactId>
+            <version>${crnk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.crnk</groupId>
+            <artifactId>crnk-validation</artifactId>
+            <version>${crnk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.crnk</groupId>
+            <artifactId>crnk-security</artifactId>
+            <version>${crnk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.crnk</groupId>
+            <artifactId>crnk-monitor-brave4</artifactId>
+            <version>${crnk.version}</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
         <java.version>1.8</java.version>
+        <crnk.version>2.8.20180718034955</crnk.version>
     </properties>
 
 
